@@ -1,5 +1,8 @@
 {
   "name": "server",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
   "packageManager": "yarn@3.5.1",
   "dependencies": {
     "bcrypt": "^5.1.1",
