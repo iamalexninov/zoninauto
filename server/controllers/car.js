@@ -1,8 +1,6 @@
 const router = require("express").Router();
 const carService = require("../services/car");
 
-router.get("/", (req, res) => {});
-
 router.post("/", async (req, res) => {
   const data = {
     brand: req.body.brand,
@@ -25,6 +23,24 @@ router.post("/", async (req, res) => {
     // TODO: insert errors
     console.error(error);
     res.status(401).json(error);
+  }
+});
+
+router.get("/", async (req, res) => {
+  const cars = await carService.getCars();
+  res.status(200).json(cars);
+}); 
+
+router.get("/:id", async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const car = await carService.getCar(id);
+    res.status(200).json(car);
+  } catch (error) {
+    // TODO: set errors
+    console.error(error);
+    res.status(401).json(error)
   }
 });
 
