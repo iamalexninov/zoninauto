@@ -1,6 +1,6 @@
 const { Schema, Types, model } = require("mongoose");
 
-const carSchema = new mongoose.Schema({
+const carSchema = new Schema({
   brand: {
     type: String,
     required: [true, "Brand is required."],
@@ -26,7 +26,7 @@ const carSchema = new mongoose.Schema({
     type: Number,
     default: 0,
     min: [0, "Price cannot be negative."],
-    require:[true,'Price is required.']
+    require: [true, "Price is required."],
   },
   mileage: {
     type: Number,
@@ -38,10 +38,15 @@ const carSchema = new mongoose.Schema({
     enum: ["manual", "automatic", "semiautomatic"],
     required: [true, "Transmission is required."],
   },
-  engine: {
-    type: String,
-    required: [true, "Engine details are required."],
-    trim: true,
+  horsePower: {
+    type: Number,
+    min: [0, "Horsepower cannot be negative"],
+    required: [true, "Horse Powers are required."],
+  },
+  torque: {
+    type: Number,
+    min: [0, "Torque cannot be negative"],
+    required: [true, "Torque is required."],
   },
   fuelType: {
     type: String,
@@ -54,12 +59,14 @@ const carSchema = new mongoose.Schema({
       trim: true,
     },
   ],
-  owner: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
+  // owner: [
+  //   {
+  //     type: Types.ObjectId,
+  //     ref: "User",
+  //   },
+  // ],
 });
 
-const Car = mongoose.model("Car", carSchema);
+const Car = model("Car", carSchema);
+
+module.exports = Car;
