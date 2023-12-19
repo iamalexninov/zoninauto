@@ -4,8 +4,8 @@ const routes = require("./routes");
 
 const app = express();
 
-require("./config/express")(app);
 require("./config/database")();
+require("./config/express")(app);
 
 app.use(routes);
 
