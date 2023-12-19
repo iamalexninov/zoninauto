@@ -60,11 +60,23 @@ router.put("/:id", async (req, res) => {
     features: req.body.features,
   };
 
-  
   try {
     console.log(req.body, req.params);
     const car = await carService.updateCar(id, data);
     res.status(201).json(car);
+  } catch (error) {
+    // TODO: insert errors
+    console.error(error);
+    res.status(401).json(error);
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const car = await carService.deleteCar(id);
+    res.status(204).json("Car was deleted.");
   } catch (error) {
     // TODO: insert errors
     console.error(error);

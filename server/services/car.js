@@ -48,9 +48,14 @@ async function updateCar(id, data) {
   return car;
 }
 
+async function deleteCar(id) {
+  await Car.findByIdAndDelete(id);
+}
+
 module.exports = {
   createCar,
   getCars,
   getCar,
   updateCar,
+  deleteCar
 };
