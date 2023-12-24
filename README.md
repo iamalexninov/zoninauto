@@ -6,6 +6,8 @@ Zonin Dealership is built on React for the frontend and Express for robust serve
 
 ```React, ContextApi, CSS Modules, NodeJS/ExpressJS, Mongoose, Bcrypt, JSONWEBTOKEN and more.```
 
-## Design of the Zonin Dealership
+# Design
+Zonin Dealership's web pages were designed using Figma, enabling the creation of visually appealing and user-friendly interfaces, ensuring seamless translation from design concepts to the final platform.
 
+#### Check each page, here: 
 [Home page](./design/Home%20Page.png)
