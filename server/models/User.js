@@ -30,4 +30,13 @@ const userSchema = new Schema({
         "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character.",
     },
   },
+  type: {
+    type: String,
+    enum: ["user", "admin"],
+    default: "user",
+  },
 });
+
+const User = model("User", userSchema);
+
+module.exports = User;
