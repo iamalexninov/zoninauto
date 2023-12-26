@@ -1,0 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Playfair+Display:wght@600&display=swap");
+@import url(./base/index.css);
+
+body {
+  background-color: var(--royalred);
+}

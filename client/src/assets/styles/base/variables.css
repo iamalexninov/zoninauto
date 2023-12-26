@@ -1,0 +1,15 @@
+:root {
+  --royalred: #880127;
+  --dark-royalred: #530017;
+  --darkblue: #111822;
+  --black: #000;
+  --white: #fff;
+  --gray: #f4f4f4;
+  --dark-gray: #d9d9d9;
+
+  --fm-1: "Playfair Display", sans-serif;
+  --fm-2: "Montserrat", sans-serif;
+
+  --fw-1-600: 600;
+  --fw-2-300: 300;
+}
