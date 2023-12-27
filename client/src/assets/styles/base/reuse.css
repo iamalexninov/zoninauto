@@ -1,0 +1,12 @@
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: var(--br-5);
+  text-transform: uppercase;
+  text-align: center;
+}

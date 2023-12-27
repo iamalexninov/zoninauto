@@ -1,0 +1,95 @@
+.header {
+  position: fixed;
+  width: 100%;
+  padding-inline: 30px;
+  padding-block: 10px;
+  box-shadow: var(--shadow);
+  z-index: 999;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  position: relative;
+  width: 110px;
+  height: 60px;
+  object-fit: cover;
+  z-index: 3;
+}
+
+.navbar_list {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background-color: var(--gray);
+  height: 100vh;
+  width: 200px;
+  z-index: 1;
+  box-shadow: var(--shadow);
+  transition: var(--tr-in);
+}
+
+.active {
+  left: 0;
+  transition: var(--tr-out);
+}
+
+.navbar_list li .navbar_link {
+  color: var(--darkblue);
+  transition: var(--tr-out);
+}
+
+.navbar_list li .navbar_link:hover {
+  color: var(--royalred);
+  transition: var(--tr-in);
+}
+
+.navbar_btn {
+  background-color: var(--royalred);
+  color: var(--white);
+  transition: var(--tr-out);
+}
+
+.navbar_btn:hover {
+  background-color: var(--white);
+  color: var(--royalred);
+  border: 1px solid var(--royalred);
+  transition: var(--tr-in);
+}
+
+.mobile_btn {
+  color: var(--royalred);
+}
+
+.navbar_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.544);
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  transition: var(--tr-in);
+}
+
+@media only screen and (min-width: 767px) {
+  .navbar_list {
+    all: unset;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .mobile_btns,
+  .navbar_overlay {
+    display: none;
+  }
+}

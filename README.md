@@ -1,3 +1,5 @@
+## New Idea - combine E-Shop and Dealership in one website.
+
 # ZONIN DEALERSHIP
 Welcome to Zonin Dealership—a dynamic project within my programmer portfolio. This web application aims to provide a seamless and user-friendly platform for car enthusiasts and potential buyers. Zonin Dealership showcases an extensive inventory of vehicles, offering a smooth browsing experience to explore various models, specifications, and pricing. Built with a focus on intuitive design and functionality, this project demonstrates my skills in web development, aiming to create an engaging and informative space for those in search of their dream vehicle.
 
