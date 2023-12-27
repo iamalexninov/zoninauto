@@ -8,12 +8,12 @@ const HomeHero = () => {
     <section className={styles.hero}>
       <div className={["wrapper", styles.content].join(" ")}>
         <div className={styles.text_content}>
-          <h3 className={styles.subtitle}>Discover Excellence in Every Mile</h3>
-          <h1 className={styles.title}>ZoninAuto: Where Every Ride Counts</h1>
+          <h4 className={styles.subtitle}>Discover Excellence in Every Mile</h4>
+          <h1 className={styles.title}>Zonin Auto: Where Every Ride Counts</h1>
           <p className={styles.paragraph}>
-            Welcome to our dealership, where your dream ride becomes a reality.
-            Explore our diverse selection of top-notch vehicles and find the
-            perfect match for your lifestyle and preferences.
+            Welcome to our car world, where your dream ride becomes a reality.
+            Explore our diverse selection of top-notch vehicles or find the
+            perfect car part for your vehicle.
           </p>
           <NavLink to="/catalogue" className={["btn", styles.cta].join(" ")}>
             discover more

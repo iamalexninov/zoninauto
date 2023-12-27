@@ -3,7 +3,9 @@
 }
 
 .btn {
-  /* display: block; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   padding: 10px 20px;
   border-radius: var(--br-5);

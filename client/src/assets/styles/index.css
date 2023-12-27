@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Playfair+Display:wght@600&display=swap");
 @import url(./base/index.css);
 
-/* Just for a test */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    height: 300vh;
-    background-color: var(--white);
+  background-color: var(--white);
 }
