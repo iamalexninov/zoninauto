@@ -1,12 +1,19 @@
 .wrapper {
-  max-width: 1400px;
-  margin: 0 auto;
+  padding-inline: 20px;
 }
 
 .btn {
+  /* display: block; */
   cursor: pointer;
   padding: 10px 20px;
   border-radius: var(--br-5);
   text-transform: uppercase;
   text-align: center;
+}
+
+@media only screen and (min-width:767px) {
+  .wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
 }

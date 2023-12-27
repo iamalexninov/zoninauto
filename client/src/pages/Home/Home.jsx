@@ -1,8 +1,9 @@
+import HomeHero from "./Hero/HomeHero";
+
 const Home = () => {
   return (
     <>
-      <div>Home</div>
-      <button className="btn">discover more</button>
+      <HomeHero />
     </>
   );
 };
