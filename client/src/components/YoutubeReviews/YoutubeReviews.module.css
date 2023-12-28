@@ -1,0 +1,52 @@
+.youtube {
+  background-image: url("../../assets/images/youtube-img.jpg");
+  background-position: center;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 100%;
+  padding: 30px;
+}
+
+.text_youtube {
+  width: 100%;
+  max-width: 500px;
+}
+
+.subtitle {
+  color: var(--royalred);
+  margin-bottom: 10px;
+}
+
+.title {
+  color: var(--white);
+}
+
+@media only screen and (min-width: 767px) {
+  .youtube {
+    height: 600px;
+  }
+
+  .content {
+    justify-content: space-between;
+    flex-direction: row;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  .text_youtube {
+    max-width: 700px;
+  }
+}
