@@ -1,0 +1,151 @@
+.footer {
+  width: 100%;
+  background-color: var(--secondary);
+}
+
+.top_footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: var(--white);
+}
+
+.contact {
+  max-width: 500px;
+  padding-block: 40px;
+}
+
+.contact_title {
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.contact_p {
+  color: var(--dark-gray);
+  margin-bottom: 30px;
+}
+
+.icon_entry {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.icon {
+  display: flex;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: var(--primary);
+}
+
+.icon_text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--dark-gray);
+}
+
+.icon_text p:first-child {
+  color: var(--white);
+}
+
+.navigation,
+.quick_list,
+.legal {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-block: 40px ;
+}
+
+.navigation li:first-child,
+.quick_list li:first-child,
+.legal li:first-child {
+  margin-bottom: 5px;
+}
+
+.navigation li a,
+.quick_list li a,
+.legal li a {
+  color: var(--dark-gray);
+  transition: var(--tr-out);
+}
+
+.navigation li a:hover,
+.quick_list li a:hover,
+.legal li a:hover {
+  color: var(--primary);
+  transition: var(--tr-in);
+}
+
+.subscribe {
+  padding-block: 40px;
+}
+
+.subscribe_title {
+  margin-bottom: 20px;
+}
+
+.subscribe_field {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.subscribe_field input {
+  border: 0;
+  outline: none;
+  padding-left: 10px;
+  border-radius: 5px;
+}
+
+.subscribe_field button,
+.bottom_footer button {
+  background-color: var(--primary);
+  color: var(--white);
+  transition: var(--tr-out);
+}
+
+.subscribe_field button:hover,
+.bottom_footer button:hover {
+  color: var(--primary);
+  transition: var(--tr-in);
+  background-color: var(--white);
+  border: 1px solid var(--primary);
+}
+
+.subscribe_text{
+  max-width: 280px;
+  color: var(--dark-gray);
+  margin-bottom: 40px;
+}
+
+.subscribe_icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subscribe_icons li {
+  display: flex;
+  cursor: pointer;
+  background-color: var(--primary);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.bottom_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-inline: 30px;
+  padding-block: 15px;
+  background-color: #121118;
+}
+
+.bottom_footer p {
+  color: var(--dark-gray);
+}

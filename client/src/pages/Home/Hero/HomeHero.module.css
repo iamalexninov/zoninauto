@@ -22,18 +22,18 @@
 }
 
 .subtitle {
-  color: var(--royalred);
+  color: var(--primary);
   margin-bottom: 10px;
 }
 
 .title {
   margin-bottom: 20px;
-  color: var(--darkblue);
+  color: var(--secondary);
 }
 
 .paragraph {
   margin-bottom: 50px;
-  color: var(--darkblue);
+  color: var(--secondary);
 }
 
 .cta {
@@ -42,14 +42,14 @@
   margin: 0px auto 40px auto;
   color: var(--white);
   transition: var(--tr-out);
-  background-color: var(--royalred);
+  background-color: var(--primary);
 }
 
 .cta:hover {
-  color: var(--royalred);
+  color: var(--primary);
   transition: var(--tr-in);
   background-color: var(--white);
-  border: 1px solid var(--royalred);
+  border: 1px solid var(--primary);
 }
 
 .picture_content {

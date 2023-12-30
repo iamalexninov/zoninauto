@@ -1,0 +1,13 @@
+Home Page
+
+[x] - navbar
+[x] - hero
+    [] - design new home page, add two buttons one for dealership and one for e-shop
+[] - service component
+[x] - about component
+[] - latest cars - component
+[x] - youtube preview 
+    [] - remake color of the youtube buttons
+[] - blog section - latest blog posts
+[x] - companies
+[x] - footer 

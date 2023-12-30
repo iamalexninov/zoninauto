@@ -1,11 +1,10 @@
 :root {
   /* Colors */
-  --royalred: #880127;
-  --dark-royalred: #530017;
-  --darkblue: #071427;
+  --primary: #ff5400;
+  --secondary: #1f1f27;
   --black: #000;
   --white: #fff;
-  --gray: #f4f4f4;
+  --light-gray: #f4f4f4;
   --dark-gray: #d9d9d9;
 
   /* Font-Family */

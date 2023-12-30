@@ -16,7 +16,9 @@ header,
 hgroup,
 menu,
 nav,
-section span {
+section,
+span,
+i {
   display: block;
 }
 

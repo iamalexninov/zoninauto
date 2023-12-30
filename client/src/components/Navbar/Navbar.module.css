@@ -31,7 +31,7 @@
   justify-content: center;
   align-items: center;
   gap: 40px;
-  background-color: var(--gray);
+  background-color: var(--light-gray);
   height: 100vh;
   width: 200px;
   z-index: 1;
@@ -45,30 +45,30 @@
 }
 
 .navbar_list li .navbar_link {
-  color: var(--darkblue);
+  color: var(--secondary);
   transition: var(--tr-out);
 }
 
 .navbar_list li .navbar_link:hover {
-  color: var(--royalred);
+  color: var(--primary);
   transition: var(--tr-in);
 }
 
 .navbar_btn {
-  background-color: var(--royalred);
+  background-color: var(--primary);
   color: var(--white);
   transition: var(--tr-out);
 }
 
 .navbar_btn:hover {
   background-color: var(--white);
-  color: var(--royalred);
-  border: 1px solid var(--royalred);
+  color: var(--primary);
+  border: 1px solid var(--primary);
   transition: var(--tr-in);
 }
 
 .mobile_btn {
-  color: var(--royalred);
+  color: var(--primary);
 }
 
 .navbar_overlay {

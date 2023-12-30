@@ -1,5 +1,5 @@
 .about {
-  background-color: var(--darkblue);
+  background-color: var(--secondary);
   padding-block: 100px;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .subtitle {
-  color: var(--royalred);
+  color: var(--primary);
   margin-bottom: 10px;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .paragraph {
-  color: var(--gray);
+  color: var(--light-gray);
   margin-bottom: 30px;
 }
 
@@ -54,26 +54,26 @@
   justify-content: center;
   padding: 10px;
   border-radius: 50px;
-  background-color: var(--royalred);
+  background-color: var(--primary);
   color: var(--white);
   transition: var(--tr-out);
 }
 
 .about_item p {
-  color: var(--gray);
+  color: var(--light-gray);
 }
 
 .about_btn {
   width: 220px;
   height: 60px;
   color: var(--white);
-  background-color: var(--royalred);
+  background-color: var(--primary);
   transition: var(--tr-out);
 }
 
 .about_btn:hover, .about_icon:hover {
-  color: var(--royalred);
-  border: 1px solid var(--royalred);
+  color: var(--primary);
+  border: 1px solid var(--primary);
   background-color: var(--white);
   transition: var(--tr-in);
 }

@@ -22,9 +22,9 @@ const About = () => {
         </div>
         <div className={styles.text_about}>
           <span className={styles.subtitle}>about the company</span>
-          <h2 className={styles.title}>
+          <h3 className={styles.title}>
             Revolutionary Automotive Hub: Cars and Parts Unified
-          </h2>
+          </h3>
           <p className={styles.paragraph}>
             At the heart of our endeavor lies a transformative automotive hub
             where car sales and auto parts distribution converge seamlessly.
