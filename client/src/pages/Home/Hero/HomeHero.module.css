@@ -5,7 +5,7 @@
   background-size: cover;
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.5);
-  height: 95vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,14 +47,8 @@
   color: var(--white);
   transition: var(--tr-out);
 }
-
+/* edrwq */
 .cta:hover {
   background-color: rgba(255, 255, 255, 0.1);
   transition: var(--tr-in);
-}
-
-.cta-cars {
-}
-
-.cta-shop {
 }
