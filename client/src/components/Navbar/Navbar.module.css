@@ -4,7 +4,8 @@
   padding-inline: 20px;
   padding-block: 10px;
   box-shadow: var(--shadow);
-  background-color: var(--white);
+  background-color: rgba(240, 238, 238, 0.32);
+  backdrop-filter: blur(30px);
   z-index: 999;
 }
 
@@ -31,7 +32,7 @@
   justify-content: center;
   align-items: center;
   gap: 40px;
-  background-color: var(--light-gray);
+  background-color: var(--secondary);
   height: 100vh;
   width: 200px;
   z-index: 1;
@@ -45,7 +46,7 @@
 }
 
 .navbar_list li .navbar_link {
-  color: var(--secondary);
+  color: var(--white);
   transition: var(--tr-out);
 }
 

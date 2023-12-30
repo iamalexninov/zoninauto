@@ -1,115 +1,60 @@
 .hero {
-  padding-top: 110px;
-  background-image: url("../../../assets/images/banner1.jpg");
-  overflow: hidden;
-}
-
-.content {
+  background-image: url("../../../assets/images/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 95vh;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-}
-
-.text_content {
-  width: 100%;
-  max-width: 650px;
+  align-items: center;
   text-align: center;
 }
 
-.subtitle,
-.title {
-  text-transform: uppercase;
-}
-
 .subtitle {
+  margin: 0 auto 10px auto;
+  text-transform: uppercase;
   color: var(--primary);
-  margin-bottom: 10px;
 }
 
 .title {
-  margin-bottom: 20px;
-  color: var(--secondary);
+  color: var(--white);
+  text-transform: uppercase;
+  margin-bottom: 15px;
 }
 
 .paragraph {
-  margin-bottom: 50px;
-  color: var(--secondary);
+  color: var(--dark-gray);
+  max-width: 500px;
+  text-align: center;
+  margin: 0 auto 50px auto;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .cta {
-  width: 300px;
+  width: 250px;
   height: 70px;
-  margin: 0px auto 40px auto;
+  background-color: rgba(255, 85, 0, 0.239);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
   color: var(--white);
   transition: var(--tr-out);
-  background-color: var(--primary);
 }
 
 .cta:hover {
-  color: var(--primary);
+  background-color: rgba(255, 255, 255, 0.1);
   transition: var(--tr-in);
-  background-color: var(--white);
-  border: 1px solid var(--primary);
 }
 
-.picture_content {
-  position: relative;
-  width: 100%;
-  height: 60vh;
-  max-width: 600px;
+.cta-cars {
 }
 
-.circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  max-width: 550px;
-  opacity: 0.7;
-}
-
-.mercedes {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-}
-
-@media only screen and (min-width:481px) {
-  .cta {
-    margin: 0 auto 80px auto;
-  }
-}
-
-@media only screen and (min-width: 1281px) {
-  .hero {
-    padding-top: 0px;
-  }
-
-  .content {
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .text_content {
-    max-width: 600px;
-    text-align: left;
-  }
-
-  .cta {
-    margin: 0;
-  }
-
-  .picture_content {
-    height: 100vh;
-    max-width: 600px;
-  }
-}
-
-@media only screen and (min-width: 1350px) {
-  .picture_content {
-    max-width: 700px;
-  }
+.cta-shop {
 }

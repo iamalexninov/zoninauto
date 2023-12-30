@@ -1,23 +1,23 @@
 import styles from "./Companies.module.css";
 
-import power from "../../assets/images/power.png";
-import autodealer from "../../assets/images/autodealer.png";
+import japanparts from "../../assets/images/japanparts.png";
+import swag from "../../assets/images/swag.png";
 import bosch from "../../assets/images/bosch.png";
-import race from "../../assets/images/race.png";
+import mahle from "../../assets/images/mahle.png";
+import trw from "../../assets/images/trw.png";
+import fram from "../../assets/images/fram.png";
 
 const Companies = () => {
   return (
     <section className={styles.companies}>
       <div className="wrapper">
         <div className={styles.companies_content}>
-          <img className={styles.img} src={power} alt="Power Brand" />
-          <img
-            className={styles.img}
-            src={autodealer}
-            alt="Auto Dealer Brand"
-          />
+          <img className={styles.img} src={japanparts} alt="Japanparts Brand" />
+          <img className={styles.img} src={swag} alt="Swag Brand" />
           <img className={styles.img} src={bosch} alt="Bosch Brand" />
-          <img className={styles.img} src={race} alt="Race Brand" />
+          <img className={styles.img} src={mahle} alt="Mahle Brand" />
+          <img className={styles.img} src={trw} alt="TRW Automotive Brand" />
+          <img className={styles.img} src={fram} alt="Fram Brand" />
         </div>
       </div>
     </section>
