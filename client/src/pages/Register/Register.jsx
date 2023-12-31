@@ -21,10 +21,6 @@ const Register = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
 
-    setUsername(username);
-    setEmail(email);
-    setPassword(password);
-
     try {
       await register(username, email, password);
       navigate("/");

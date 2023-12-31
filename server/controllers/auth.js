@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const authService = require("../services/auth");
+const mapErrors = require("../utils/mapper");
 
 router.get("/", async (req, res) => {
   const users = await authService.getUsers();
@@ -16,10 +17,10 @@ router.post("/register", async (req, res) => {
 
     const result = await authService.register(email, username, password);
     res.status(201).json(result);
-  } catch (error) {
-    // TODO: set errors
-    console.error(error);
-    res.status(400).json(error);
+  } catch (err) {
+    console.error(err);
+    const error = mapErrors(err);
+    res.status(400).json({ message: error });
   }
 });
 
@@ -30,9 +31,9 @@ router.post("/login", async (req, res) => {
     const result = await authService.login(email, password);
     res.json(result);
   } catch (error) {
-    // TODO: set errors
     console.error(error);
-    res.status(400).json(error);
+    const error = mapErrors(err);
+    res.status(400).json({ message: error });
   }
 });
 
