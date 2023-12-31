@@ -1,6 +1,4 @@
 import styles from "./HomeHero.module.css";
-import circle from "../../../assets/images/circle.png";
-import mercedes from "../../../assets/images/mercedes.png";
 import { NavLink } from "react-router-dom";
 
 const HomeHero = () => {

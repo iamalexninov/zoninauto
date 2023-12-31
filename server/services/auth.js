@@ -5,6 +5,8 @@ const User = require("../models/User");
 
 const blacklist = [];
 
+const getUsers = async () => await User.find({}).lean();
+
 async function register(email, username, password) {
   const existing = await User.findOne({ email: new RegExp(`^${email}$`, "i") });
 
@@ -67,6 +69,7 @@ function verifySession(token) {
 }
 
 module.exports = {
+  getUsers,
   register,
   login,
   logout,

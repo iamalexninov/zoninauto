@@ -1,5 +1,4 @@
 .footer {
-  width: 100%;
   background-color: var(--secondary);
 }
 
@@ -12,7 +11,6 @@
 
 .contact {
   max-width: 500px;
-  padding-block: 40px;
 }
 
 .contact_title {
@@ -57,7 +55,6 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding-block: 40px ;
 }
 
 .navigation li:first-child,
@@ -78,10 +75,6 @@
 .legal li a:hover {
   color: var(--primary);
   transition: var(--tr-in);
-}
-
-.subscribe {
-  padding-block: 40px;
 }
 
 .subscribe_title {

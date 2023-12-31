@@ -1,8 +1,7 @@
 .service {
-  padding-block: 100px;
-  text-align: center;
-  background-image: url('../../assets/images/banner_bg.jpg');
+  background-image: url("../../assets/images/banner_bg.jpg");
   background-size: cover;
+  text-align: center;
 }
 
 .subtitle,
@@ -25,6 +24,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  gap: 30px;
 }
 
 .list {

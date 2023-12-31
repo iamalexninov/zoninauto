@@ -1,16 +1,13 @@
-// Styles
 import styles from "./Service.module.css";
 
-// Icons
 import { FaCartShopping as Shop } from "react-icons/fa6";
 import { IoCarSport as Dealership } from "react-icons/io5";
 
-// Images
 import mercedes from "../../assets/images/mercedes.png";
 
 const Service = () => {
   return (
-    <section className={styles.service}>
+    <section className={['section',styles.service].join(' ')}>
       <div className="wrapper">
         <h4 className={styles.subtitle}>Our Services</h4>
         <h3 className={styles.title}>Streamlined Automation Services</h3>

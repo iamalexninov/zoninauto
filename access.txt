@@ -1,0 +1,10 @@
+User Access Actions 
+[] - sign in/up
+[] - add comments on blog post/car dealership advertising
+[] - store - can add auto/car parts
+
+Admin Access Actions
+[] - sing in
+[] - delete users
+[] - add, delete, edit car parts, cars and blog articles
+[] - Delete comments

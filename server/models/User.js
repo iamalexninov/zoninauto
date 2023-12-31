@@ -35,6 +35,8 @@ const userSchema = new Schema({
     enum: ["user", "admin"],
     default: "user",
   },
+  createdCars: [{ type: Types.ObjectId, ref: "Car" }],
+  createdParts: [{ type: Types.ObjectId, ref: "Autopart" }],
 });
 
 const User = model("User", userSchema);

@@ -59,12 +59,7 @@ const carSchema = new Schema({
       trim: true,
     },
   ],
-  // owner: [
-  //   {
-  //     type: Types.ObjectId,
-  //     ref: "User",
-  //   },
-  // ],
+  owner: [{ type: Types.ObjectId, ref: "User" }],
 });
 
 const Car = model("Car", carSchema);

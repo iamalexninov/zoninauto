@@ -1,11 +1,14 @@
-import logo from "../../assets/images/logo.png";
 import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 import {
   FaBars as MobileOpenBtn,
   FaX as MobileCloseBtn,
 } from "react-icons/fa6";
+
 import styles from "./Navbar.module.css";
-import { useEffect, useState } from "react";
+
+import logo from "../../assets/images/logo.png";
 
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);

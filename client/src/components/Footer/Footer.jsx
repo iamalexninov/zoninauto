@@ -44,7 +44,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className="wrapper">
-        <div className={styles.top_footer}>
+        <div className={["section", styles.top_footer].join(" ")}>
           <div className={styles.contact}>
             <h4 className={styles.contact_title}>Contact Us</h4>
             <p className={styles.contact_p}>
@@ -142,7 +142,10 @@ const Footer = () => {
                 <Arrow size={20} />
               </button>
             </div>
-            <p className={styles.subscribe_text}>Join our community for exclusive updates, insider access, and innovative insights delivered straight to your inbox.</p>
+            <p className={styles.subscribe_text}>
+              Join our community for exclusive updates, insider access, and
+              innovative insights delivered straight to your inbox.
+            </p>
             <ul className={styles.subscribe_icons}>
               <li>
                 <Linkedin size={25} color="#fff" />
@@ -161,11 +164,11 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.bottom_footer}>
-          <p>Copyright © 2023. All rights reserved.</p>
-          <button className="btn" onClick={scrollOnTop}>
-            <Up size={20} />
-          </button>
-        </div>
+        <p>Copyright © 2023. All rights reserved.</p>
+        <button className="btn" onClick={scrollOnTop}>
+          <Up size={20} />
+        </button>
+      </div>
     </footer>
   );
 };

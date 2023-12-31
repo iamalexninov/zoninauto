@@ -1,12 +1,14 @@
 import styles from "./About.module.css";
+
 import mechanic from "../../assets/images/mechanic.png";
 import dealer from "../../assets/images/dealer.png";
+
 import { NavLink } from "react-router-dom";
 import { FaCheck } from "react-icons/fa6";
 
 const About = () => {
   return (
-    <section className={styles.about}>
+    <section className={["section", styles.about].join(" ")}>
       <div className={["wrapper", styles.content].join(" ")}>
         <div className={styles.pictures_about}>
           <img
@@ -35,19 +37,19 @@ const About = () => {
           <ul className={styles.about_list}>
             <li className={styles.about_item}>
               <div className={styles.about_icon}>
-                <FaCheck size={25}/>
+                <FaCheck size={25} />
               </div>
               <p>Quality Inventory</p>
             </li>
             <li className={styles.about_item}>
               <div className={styles.about_icon}>
-                <FaCheck size={25}/>
+                <FaCheck size={25} />
               </div>
               <p>Exceptional Customer Service</p>
             </li>
             <li className={styles.about_item}>
               <div className={styles.about_icon}>
-                <FaCheck size={25}/>
+                <FaCheck size={25} />
               </div>
               <p>Transparency and Trust</p>
             </li>
