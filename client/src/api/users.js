@@ -1,3 +1,23 @@
+import { get, post } from "../api/api";
+import { clearUser, setUser } from "../utils/auth";
+
 const endpoints = {
-    
+  register: "/users/register",
+  login: "/users/login",
+  logout: "/users/logout",
+};
+
+export async function register(username, email, password) {
+  const result = await post(endpoints.register, { username, email, password });
+  setUser(result);
+}
+
+export async function login(email, password) {
+  const result = await post(endpoints.login, { email, password });
+  setUser(result);
+}
+
+export async function logout() {
+  get(endpoints.logout);
+  clearUser();
 }

@@ -1,6 +1,6 @@
 import { clearUser, getUser } from "../utils/auth";
 
-const host = "http://localhost:5500";
+const host = "http://localhost:5500/api";
 
 async function request(method, url, data) {
   const options = {

@@ -4,9 +4,35 @@ import Hero from "../../components/Hero/Hero";
 import Companies from "../../components/Companies/Companies";
 
 import { FaUser as UsernameIcon } from "react-icons/fa6";
+
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { register } from "../../api/users";
 
 const Register = () => {
+  const [username, setUsername] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
+
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+
+    setUsername(username);
+    setEmail(email);
+    setPassword(password);
+
+    try {
+      await register(username, email, password);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <Hero title="Join Now: Start Your Journey" subtitle="Sign Up" />
@@ -21,7 +47,7 @@ const Register = () => {
               sign in
             </Link>
           </div>
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={onSubmitHandler}>
             <h3 className={styles.form_title}>Create an Account</h3>
             <div className={styles.field}>
               <UsernameIcon size={20} className={styles.icon} />
@@ -30,6 +56,7 @@ const Register = () => {
                 type="text"
                 name="username"
                 placeholder="Username"
+                onChange={(e) => setUsername(e.target.value)}
               />
             </div>
             <div className={styles.field}>
@@ -39,6 +66,7 @@ const Register = () => {
                 type="email"
                 name="email"
                 placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className={styles.field}>
@@ -46,8 +74,9 @@ const Register = () => {
               <input
                 className="input_field"
                 type="password"
-                name="username"
+                name="password"
                 placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <button
