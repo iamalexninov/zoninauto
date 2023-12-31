@@ -1,4 +1,4 @@
-import { clearUser, getUser } from "../utils/auth";
+import { clearUser, getUser } from "../utils/localeStorage";
 
 const host = "http://localhost:5500/api";
 

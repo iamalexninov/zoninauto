@@ -5,8 +5,8 @@ module.exports = () => (req, res, next) => {
 
   try {
     if (token) {
-      const userData = verifySession(token);
-      req.user = userData;
+      const user = verifySession(token);
+      req.user = user;
     }
     next();
   } catch (error) {

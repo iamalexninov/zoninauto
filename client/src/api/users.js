@@ -1,5 +1,5 @@
 import { get, post } from "../api/api";
-import { clearUser, setUser } from "../utils/auth";
+import { clearUser, setUser } from "../utils/localeStorage";
 
 const endpoints = {
   register: "/users/register",
