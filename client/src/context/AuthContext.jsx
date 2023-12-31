@@ -18,6 +18,7 @@ export const AuthContextProvider = ({ children }) => {
     user: null,
   });
 
+  // TODO: Remove
   console.log("AuthContext state:", state);
 
   return (

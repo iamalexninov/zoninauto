@@ -30,8 +30,8 @@ router.post("/login", async (req, res) => {
   try {
     const result = await authService.login(email, password);
     res.json(result);
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.error(err);
     const error = mapErrors(err);
     res.status(400).json({ message: error });
   }

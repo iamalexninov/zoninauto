@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import {
@@ -9,11 +9,21 @@ import {
 import styles from "./Navbar.module.css";
 
 import logo from "../../assets/images/logo.png";
+import useLogout from "../../hooks/useLogout";
 
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
+  const navigate = useNavigate();
+  const { signout } = useLogout();
 
   const hideMobileMenu = () => [setMobileMenu(false)];
+
+  const handleOnLogoutClick = async (e) => {
+    e.preventDefault();
+
+    await signout();
+    navigate("/");
+  };
 
   useEffect(() => {
     window.onscroll = () => {
@@ -64,7 +74,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           {/* TODO: add e-shop later */}
-          
+
           {/* <li>
             <NavLink
               onClick={hideMobileMenu}
@@ -90,6 +100,15 @@ const Navbar = () => {
               className={["btn", styles.navbar_btn].join(" ")}
             >
               sign in
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              onClick={(hideMobileMenu, handleOnLogoutClick)}
+              to="/logout"
+              className={["btn", styles.navbar_btn].join(" ")}
+            >
+              Logout
             </NavLink>
           </li>
         </ul>

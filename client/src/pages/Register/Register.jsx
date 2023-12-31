@@ -8,24 +8,25 @@ import { FaUser as UsernameIcon } from "react-icons/fa6";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { register } from "../../api/users";
+
+import useSignup from "../../hooks/useSignup";
 
 const Register = () => {
   const [username, setUsername] = useState(null);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
-  const [error, setError] = useState(null);
 
   const navigate = useNavigate();
+  const { signup, error, isLoading } = useSignup();
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
 
     try {
-      await register(username, email, password);
+      await signup(username, email, password);
       navigate("/");
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.log(err.message);
     }
   };
 
@@ -78,6 +79,7 @@ const Register = () => {
             <button
               type="submit"
               className={["btn", styles.form_btn].join(" ")}
+              disabled={isLoading}
             >
               sign up
             </button>
