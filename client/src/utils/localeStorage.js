@@ -1,4 +1,4 @@
-const itemName = "user";
+const itemName = "user_token";
 
 export function getUser() {
   return JSON.parse(localStorage.getItem(itemName));

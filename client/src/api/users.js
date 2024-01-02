@@ -8,7 +8,11 @@ const endpoints = {
 };
 
 export async function register(username, email, password) {
-  const result = await post(endpoints.register, { username, email, password });
+  const result = await post(endpoints.register, {
+    username,
+    email,
+    password,
+  });
   setUser(result);
   return result;
 }

@@ -23,10 +23,14 @@ const Register = () => {
     e.preventDefault();
 
     try {
+      if (password === "") {
+        throw { message: "Password field is required." };
+      }
+
       await signup(username, email, password);
       navigate("/");
     } catch (err) {
-      console.log(err.message);
+      console.log(err);
     }
   };
 
@@ -83,6 +87,7 @@ const Register = () => {
             >
               sign up
             </button>
+            {error && <p>{error}</p>}
           </form>
         </div>
       </section>

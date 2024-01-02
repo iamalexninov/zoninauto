@@ -1,3 +1,9 @@
 31.12.2023.
-[] - Make a Sign In, Sign Up pages
-[] - Make a Latest released car component
+[x] - Make a Sign In, Sign Up pages
+[x] - Make a Latest released car component
+
+01.01.2024.
+[] - check error messages
+[] - Make Login design and functionality
+[] - set guards
+[] - start about page

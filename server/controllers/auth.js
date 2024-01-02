@@ -1,26 +1,28 @@
 const router = require("express").Router();
 const authService = require("../services/auth");
-const mapErrors = require("../utils/mapper");
 
 router.get("/", async (req, res) => {
   const users = await authService.getUsers();
   res.json(users);
 });
 
-router.post("/register", async (req, res) => {
+router.post("/register", async (req, res, next) => {
   const { email, username, password } = req.body;
 
   try {
-    if (email === "" || username === "" || password === "") {
-      throw new Error("Field is required.");
-    }
+    // if (password === "") {
+    //   throw { messages: "Password field is empty." };
+    // }
 
-    const result = await authService.register(email, username, password);
+    const result = await authService.register(username, email, password);
     res.status(201).json(result);
   } catch (err) {
-    console.error(err);
-    const error = mapErrors(err);
-    res.status(400).json({ message: error });
+    console.log(err);
+    next(err);
+    // next(err);
+    // const errors = Object.values(err.errors).map((e) => e.message).join('\n');
+    // console.log(errors);
+    // res.status(400).json({ message: errors });
   }
 });
 

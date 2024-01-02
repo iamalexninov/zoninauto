@@ -3,20 +3,18 @@ const jwt = require("jsonwebtoken");
 const { SALT_ROUNDS, SECRET } = require("../config/config");
 const User = require("../models/User");
 
+// TODO: make a research
 const blacklist = [];
 
-const getUsers = async () => await User.find({}).lean();
+const getUsers = async () => await User.find({});
 
-async function register(email, username, password) {
+async function register(username, email, password) {
   const existing = await User.findOne({ email: new RegExp(`^${email}$`, "i") });
-
-  if (existing) {
-    throw new Error("User already exists.");
-  }
+  if (existing) throw new Error("User already exists.");
 
   const user = new User({
-    email,
     username,
+    email,
     password: await bcrypt.hash(password, SALT_ROUNDS),
   });
 
@@ -27,16 +25,10 @@ async function register(email, username, password) {
 
 async function login(email, password) {
   const user = await User.findOne({ email: new RegExp(`^${email}$`, "i") });
-
-  if (!user) {
-    throw new Error("Incorrect Email or Password.");
-  }
+  if (!user) throw new Error("Incorrect Email or Password.");
 
   const hasMatch = await bcrypt.compare(password, user.password);
-
-  if (!hasMatch) {
-    throw new Error("Incorrect Email or Password.");
-  }
+  if (!hasMatch) throw new Error("Incorrect Email or Password.");
 
   return createSession(user);
 }
