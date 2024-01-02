@@ -10,13 +10,13 @@ const useSignup = () => {
 
   const signup = async (username, email, password) => {
     setIsLoading(true);
-    // setError(null);
+    setError(null);
 
     try {
       const result = await register(username, email, password);
       dispatch({ type: "LOGIN", payload: result });
     } catch (err) {
-      console.log(err);
+      console.log(err.message);
       setError(err.message);
       throw err;
     }

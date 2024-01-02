@@ -21,17 +21,9 @@ const Register = () => {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-
-    try {
-      if (password === "") {
-        throw { message: "Password field is required." };
-      }
-
-      await signup(username, email, password);
-      navigate("/");
-    } catch (err) {
-      console.log(err);
-    }
+    
+    await signup(username, email, password);
+    navigate("/");
   };
 
   return (

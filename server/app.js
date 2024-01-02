@@ -7,7 +7,7 @@ const errors = require("./middlewares/errorHandling");
 
 const app = express();
 
-require("./config/database")();
+require("./config/database")(app);
 app.use(cors());
 app.use(express.json());
 app.use(auth());
