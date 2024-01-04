@@ -1,4 +1,4 @@
-import styles from "./Register.module.css";
+import styles from "./Auth.module.css";
 
 import Hero from "../../components/Hero/Hero";
 import Companies from "../../components/Companies/Companies";
@@ -21,7 +21,6 @@ const Register = () => {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-    
     await signup(username, email, password);
     navigate("/");
   };
@@ -29,14 +28,14 @@ const Register = () => {
   return (
     <>
       <Hero title="Join Now: Start Your Journey" subtitle="Sign Up" />
-      <section className={["section", styles.register].join(" ")}>
+      <section className={["section", styles.auth].join(" ")}>
         <div className={["wrapper", styles.content].join(" ")}>
-          <div className={styles.login_link}>
-            <h3 className={styles.login_title}>Welcome Back!</h3>
-            <p className={styles.login_p}>
+          <div className={styles.auth_link}>
+            <h3 className={styles.auth_title}>Welcome Back!</h3>
+            <p className={styles.auth_p}>
               To keep connected with us please login with your personal info.
             </p>
-            <Link to="/signin" className={["btn", styles.login_btn].join(" ")}>
+            <Link to="/signin" className={["btn", styles.auth_btn].join(" ")}>
               sign in
             </Link>
           </div>

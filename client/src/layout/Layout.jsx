@@ -4,7 +4,8 @@ import Home from "../pages/Home/Home";
 import AboutUs from "../pages/About Us/AboutUs";
 import Catalogue from "../pages/Catalogue/Catalogue";
 import Contact from "../pages/Contact/Contact";
-import Register from "../pages/Register/Register";
+import Register from "../pages/Auth/Register";
+import Login from "../pages/Auth/Login";
 import Footer from "../components/Footer/Footer";
 
 const Layout = () => {
@@ -17,8 +18,8 @@ const Layout = () => {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/catalogue" element={<Catalogue />} />
           <Route path="/contact" element={<Contact />} />
-          {/* <Route path="/signin" element={<SignIn />} /> */}
-          <Route path="/register" element={<Register />} />
+          <Route path="/signin" element={<Login />} />
+          <Route path="/signup" element={<Register />} />
         </Routes>
       </main>
       <Footer />

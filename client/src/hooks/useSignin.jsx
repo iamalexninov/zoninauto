@@ -1,19 +1,19 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
-import { register } from "../api/users";
+import { login } from "../api/users";
 
-const useSignup = () => {
+const useSignin = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
 
   const { dispatch } = useAuthContext();
 
-  const signup = async (username, email, password) => {
+  const signin = async (email, password) => {
     setIsLoading(true);
     setError(null);
 
     try {
-      const result = await register(username, email, password);
+      const result = await login(email, password);
       dispatch({ type: "LOGIN", payload: result });
     } catch (err) {
       setError(err.message);
@@ -23,7 +23,7 @@ const useSignup = () => {
     setIsLoading(false);
   };
 
-  return { signup, error, isLoading };
+  return { signin, error, isLoading };
 };
 
-export default useSignup;
+export default useSignin;

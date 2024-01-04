@@ -3,7 +3,7 @@ const cors = require("cors");
 const { PORT } = require("./config/config");
 const auth = require("./middlewares/auth");
 const routes = require("./routes");
-const errors = require("./middlewares/errorHandling");
+const errorHandling = require("./middlewares/errorHandling");
 
 const app = express();
 
@@ -14,6 +14,6 @@ app.use(auth());
 
 app.use(routes);
 
-app.use(errors());
+app.use(errorHandling());
 
 app.listen(PORT, console.log(`Listening on Port: ${PORT}`));

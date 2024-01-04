@@ -10,7 +10,7 @@ router.post("/register", async (req, res, next) => {
   const { email, username, password } = req.body;
 
   try {
-    if(email === null || username === null || password === null) {
+    if (email === null || username === null || password === null) {
       throw { message: "All fields are required." };
     }
     if (password.length < 5) {
@@ -20,21 +20,24 @@ router.post("/register", async (req, res, next) => {
     const result = await authService.register(username, email, password);
     res.status(201).json(result);
   } catch (err) {
-    console.log(err);
+    console.error(err);
     next(err);
   }
 });
 
-router.post("/login", async (req, res) => {
+router.post("/login", async (req, res, next) => {
   const { email, password } = req.body;
 
   try {
+    if (email === null || password === null) {
+      throw { message: "All fields are required." };
+    }
+
     const result = await authService.login(email, password);
     res.json(result);
   } catch (err) {
     console.error(err);
-    const error = mapErrors(err);
-    res.status(400).json({ message: error });
+    next(err);
   }
 });
 
