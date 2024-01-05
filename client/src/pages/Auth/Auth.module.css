@@ -52,12 +52,7 @@
     transform: translateY(-50%);
   }
   
-  .form_btn {
-    background-color: var(--primary);
-    width: 200px;
-    height: 50px;
-    color: var(--white);
-  }
+
   
   .auth_link {
     display: flex;
