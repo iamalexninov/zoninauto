@@ -1,0 +1,1 @@
+export const Alt = 'Zonin Auto Logo';

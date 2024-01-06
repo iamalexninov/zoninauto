@@ -6,12 +6,12 @@ import useSignin from "../../hooks/useSignin";
 
 import Hero from "../../components/Hero/Hero";
 import Companies from "../../components/Companies/Companies";
-import FormRedirect from "../../components/Global/Form/Form-Redirect/FormRedirect";
-import FormTitle from "../../components/Global/Form/Form-Title/FormTitle";
-import FormSocial from "../../components/Global/Form/Form-Social/FormSocial";
-import FormGroup from "../../components/Global/Form/Form-Group/FormGroup";
-import FormButton from "../../components/Global/Form/Form-Button/FormButton";
-import FormError from "../../components/Global/Form/Form-Error/FormError";
+import FormRedirect from "../../components/Form/Form-Redirect/FormRedirect";
+import FormTitle from "../../components/Form/Form-Title/FormTitle";
+import FormSocial from "../../components/Form/Form-Social/FormSocial";
+import FormGroup from "../../components/Form/Form-Group/FormGroup";
+import FormButton from "../../components/Form/Form-Button/FormButton";
+import FormError from "../../components/Form/Form-Error/FormError";
 
 const Login = () => {
   const [userData, setUserData] = useState({

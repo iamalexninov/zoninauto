@@ -1,0 +1,26 @@
+.button {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+.icon {
+  padding: 10px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.544);
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  transition: var(--tr-in);
+}
+
+@media only screen and (min-width: 767px) {
+  .buttons,
+  .overlay {
+    display: none;
+  }
+}
