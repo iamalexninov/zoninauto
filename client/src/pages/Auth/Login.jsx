@@ -1,30 +1,30 @@
 import styles from "./Auth.module.css";
+
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 import useSignin from "../../hooks/useSignin";
 
 import Hero from "../../components/Hero/Hero";
-import AuthNavigate from "../../components/Auth/AuthNavigate/AuthNavigate";
 import Companies from "../../components/Companies/Companies";
-import AuthForm from "../../components/Auth/AuthForm/AuthForm";
+import FormRedirect from "../../components/Global/Form/Form-Redirect/FormRedirect";
+import FormTitle from "../../components/Global/Form/Form-Title/FormTitle";
+import FormSocial from "../../components/Global/Form/Form-Social/FormSocial";
+import FormGroup from "../../components/Global/Form/Form-Group/FormGroup";
+import FormButton from "../../components/Global/Form/Form-Button/FormButton";
+import FormError from "../../components/Global/Form/Form-Error/FormError";
 
 const Login = () => {
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [userData, setUserData] = useState({
+    email: '',
+    password: '',
+  });
 
-  const navigate = useNavigate();
   const { signin, error, isLoading } = useSignin();
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await signin(email, password);
-      navigate("/");
-    } catch (error) {
-      alert(error.message);
-      navigate("/signin");
-    }
+    await signin(userData.email, userData.password);
+    setUserData({ email: '', password: '' });
   };
 
   return (
@@ -35,22 +35,34 @@ const Login = () => {
       />
       <section className={["section", styles.auth].join(" ")}>
         <div className={["wrapper", styles.content].join(" ")}>
-          <AuthNavigate
-            title="Welcome Back!"
+          <FormRedirect
+            title="Hello, Friend!"
             description="Enter your personal details and start journey with us."
-            link="signup"
-            linkText="sign up"
+            link="/signup"
+            content="sign up"
           />
-          <AuthForm
-            title="Sign In to Zonin Auto"
-            handleOnSubmit={handleOnSubmit}
-            email={email}
-            setEmail={setEmail}
-            password={password}
-            setPassword={setPassword}
-            error={error}
-            isLoading={isLoading}
-          />
+          <form className={styles.form} onSubmit={handleOnSubmit}>
+            <FormTitle title="Sign In to Zonin Auto" />
+            <FormSocial content="or use your email account:" />
+            <div className={styles.fields}>
+              <FormGroup
+                type="email"
+                name="email"
+                placeholder="Email"
+                inputValue={userData}
+                setInputValue={setUserData}
+              />
+              <FormGroup
+                type="password"
+                name="password"
+                placeholder="Password"
+                inputValue={userData}
+                setInputValue={setUserData}
+              />
+            </div>
+            <FormButton content="sign in" isLoading={isLoading} />
+            {error ? <FormError error={error} /> : ""}
+          </form>
         </div>
       </section>
       <Companies />

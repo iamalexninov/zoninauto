@@ -1,0 +1,12 @@
+.field {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  color: var(--secondary);
+  transform: translateY(-50%);
+}

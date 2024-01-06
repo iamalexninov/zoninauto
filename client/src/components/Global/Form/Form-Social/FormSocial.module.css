@@ -1,0 +1,27 @@
+.items {
+  margin-block: 30px 10px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.icon_box {
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px dotted var(--primary);
+}
+
+.icon {
+  cursor: pointer;
+  color: var(--secondary);
+}
+
+.content {
+  color: var(--dark-gray);
+}

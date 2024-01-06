@@ -25,10 +25,11 @@ async function register(username, email, password) {
 
 async function login(email, password) {
   const user = await User.findOne({ email: new RegExp(`^${email}$`, "i") });
-  if (!user) throw new Error("Incorrect Email or Password.");
+  if (!user) throw new Error("User doesn't exists. Please Sign Up.");
 
   const hasMatch = await bcrypt.compare(password, user.password);
-  if (!hasMatch) throw new Error("Incorrect Email or Password.");
+  if (!hasMatch)
+    throw new Error("Incorrect Email or Password. Please, Try Again.");
 
   return createSession(user);
 }
@@ -42,10 +43,8 @@ function createSession(user) {
     _id: user._id,
     email: user.email,
     username: user.username,
-    accessToken: jwt.sign(
-      { _id: user._id, email: user.email, type: user.type },
-      SECRET
-    ),
+    type: user.type,
+    accessToken: jwt.sign({ _id: user._id, email: user.email }, SECRET),
   };
 }
 
@@ -55,7 +54,7 @@ function verifySession(token) {
   return {
     _id: payload._id,
     email: payload.email,
-    type: payload.type,
+    username: payload.username,
     token,
   };
 }

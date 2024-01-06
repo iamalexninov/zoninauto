@@ -10,7 +10,7 @@ router.post("/register", async (req, res, next) => {
   const { email, username, password } = req.body;
 
   try {
-    if (email === null || username === null || password === null) {
+    if (email === '' || username === '' || password === '') {
       throw { message: "All fields are required." };
     }
     if (password.length < 5) {
@@ -29,7 +29,7 @@ router.post("/login", async (req, res, next) => {
   const { email, password } = req.body;
 
   try {
-    if (email === null || password === null) {
+    if (email === '' || password === '') {
       throw { message: "All fields are required." };
     }
 

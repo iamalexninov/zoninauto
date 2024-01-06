@@ -1,28 +1,31 @@
 import styles from "./Auth.module.css";
 
-import Hero from "../../components/Hero/Hero";
-import Companies from "../../components/Companies/Companies";
-
-import { FaUser as UsernameIcon } from "react-icons/fa6";
-
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 import useSignup from "../../hooks/useSignup";
 
-const Register = () => {
-  const [username, setUsername] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+import Hero from "../../components/Hero/Hero";
+import FormRedirect from "../../components/Global/Form/Form-Redirect/FormRedirect";
+import FormTitle from "../../components/Global/Form/Form-Title/FormTitle";
+import FormSocial from "../../components/Global/Form/Form-Social/FormSocial";
+import FormGroup from "../../components/Global/Form/Form-Group/FormGroup";
+import FormButton from "../../components/Global/Form/Form-Button/FormButton";
+import FormError from "../../components/Global/Form/Form-Error/FormError";
+import Companies from "../../components/Companies/Companies";
 
-  const navigate = useNavigate();
+const Register = () => {
+  const [userData, setUserData] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
+
   const { signup, error, isLoading } = useSignup();
 
-  const onSubmitHandler = async (e) => {
+  const handleOnSubmit = async (e) => {
     e.preventDefault();
-    await signup(username, email, password);
-    navigate("/");
+    await signup(userData.username, userData.email, userData.password);
+    setUserData({ username: "", email: "", password: "" });
   };
 
   return (
@@ -30,55 +33,40 @@ const Register = () => {
       <Hero title="Join Now: Start Your Journey" subtitle="Sign Up" />
       <section className={["section", styles.auth].join(" ")}>
         <div className={["wrapper", styles.content].join(" ")}>
-          <div className={styles.auth_link}>
-            <h3 className={styles.auth_title}>Welcome Back!</h3>
-            <p className={styles.auth_p}>
-              To keep connected with us please login with your personal info.
-            </p>
-            <Link to="/signin" className={["btn", styles.auth_btn].join(" ")}>
-              sign in
-            </Link>
-          </div>
-          <form className={styles.form} onSubmit={onSubmitHandler}>
-            <h3 className={styles.form_title}>Create an Account</h3>
-            <div className={styles.field}>
-              <UsernameIcon size={20} className={styles.icon} />
-              <input
-                className="input_field"
-                type="text"
+          <FormRedirect
+            title="Welcome Back!"
+            description="To keep connected with us please login with your personal info."
+            link="/signin"
+            content="sign in"
+          />
+          <form className={styles.form} onSubmit={handleOnSubmit}>
+            <FormTitle title="Create an Account" />
+            <FormSocial content="or use your email for registration:" />
+            <div className={styles.fields}>
+              <FormGroup
+                type="username"
                 name="username"
                 placeholder="Username"
-                onChange={(e) => setUsername(e.target.value)}
+                inputValue={userData}
+                setInputValue={setUserData}
               />
-            </div>
-            <div className={styles.field}>
-              <UsernameIcon size={20} className={styles.icon} />
-              <input
-                className="input_field"
+              <FormGroup
                 type="email"
                 name="email"
                 placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
+                inputValue={userData}
+                setInputValue={setUserData}
               />
-            </div>
-            <div className={styles.field}>
-              <UsernameIcon size={20} className={styles.icon} />
-              <input
-                className="input_field"
+              <FormGroup
                 type="password"
                 name="password"
                 placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
+                inputValue={userData}
+                setInputValue={setUserData}
               />
             </div>
-            <button
-              type="submit"
-              className={["btn", styles.form_btn].join(" ")}
-              disabled={isLoading}
-            >
-              sign up
-            </button>
-            {error && <p>{error}</p>}
+            <FormButton content="sign in" isLoading={isLoading} />
+            {error ? <FormError error={error} /> : ""}
           </form>
         </div>
       </section>

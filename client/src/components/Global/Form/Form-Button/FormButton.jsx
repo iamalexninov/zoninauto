@@ -1,15 +1,15 @@
-import styles from "./AuthButton.module.css";
+import styles from "./FormButton.module.css";
 
-const AuthButton = ({title, isLoading}) => {
+const FormButton = ({ content, isLoading }) => {
   return (
     <button
       type="submit"
       className={["btn", styles.button].join(" ")}
       disabled={isLoading}
     >
-      {title}
+      {content}
     </button>
   );
 };
 
-export default AuthButton;
+export default FormButton;
