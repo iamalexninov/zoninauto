@@ -22,27 +22,44 @@ export const NavbarAuth = ({ setMobileMenu }) => {
     navigate("/");
   };
 
+  const baseStyles = {
+    color: "var(--white)",
+    backgroundColor: "var(--primary)",
+  };
+
+  const hoverStyles = {
+    color: "var(--primary)",
+    border: "1px solid var(--primary)",
+    backgroundColor: "var(--white)",
+  };
+
   return (
     <div className={styles.mobile}>
       {user ? (
         <div className={styles.logged}>
-          <GlobalLink to="/profile" handler={setMobileMenu(false)}>
-            <div className={["global_icon", styles.icon].join(" ")}>
-              <GlobalIcon name="user" />
-            </div>
+          <GlobalLink to="/profile" handler={() => setMobileMenu(false)}>
+            <GlobalIcon
+              name="user"
+              baseStyles={baseStyles}
+              hoverStyles={hoverStyles}
+            />
           </GlobalLink>
-          <GlobalLink to="/logout" onClick={handleLogout}>
-            <div className={["global_icon", styles.icon].join(" ")}>
-              <GlobalIcon name="logout" />
-            </div>
+          <GlobalLink to="/logout" handler={(e) => handleLogout(e)}>
+            <GlobalIcon
+              name="logout"
+              baseStyles={baseStyles}
+              hoverStyles={hoverStyles}
+            />
           </GlobalLink>
         </div>
       ) : (
         <div className={styles.unlogged}>
-          <GlobalLink to="/signin" onClick={() => setMobileMenu(false)}>
-            <div className={["global_icon", styles.icon].join(" ")}>
-              <GlobalIcon name="login" />
-            </div>
+          <GlobalLink to="/signin" handler={() => setMobileMenu(false)}>
+            <GlobalIcon
+              name="login"
+              baseStyles={baseStyles}
+              hoverStyles={hoverStyles}
+            />
           </GlobalLink>
         </div>
       )}

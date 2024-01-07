@@ -11,12 +11,12 @@ export const HomeHeroButtons = () => {
     border: "1px solid rgba(255, 255, 255, 0.1)",
     backdropFilter: "blur(20px)",
     color: "var(--white)",
-    transition: "all 0.3s ease-out",
+    transition: "var(--tr-out)",
   };
 
   const hoverStyles = {
     backgroundColor: "rgba(255, 85, 0, 0.239)",
-    transition: "all 0.3s ease-in",
+    transition: "var(--tr-in)",
   };
 
   return (

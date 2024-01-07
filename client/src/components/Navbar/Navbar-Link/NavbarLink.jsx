@@ -6,8 +6,7 @@ export const NavbarLink = ({ content, link, setMobileMenu }) => {
       <GlobalLink
         to={link}
         content={content}
-        handrel={setMobileMenu}
-        value={false}
+        handrel={() => setMobileMenu(false)}
       />
     </li>
   );
