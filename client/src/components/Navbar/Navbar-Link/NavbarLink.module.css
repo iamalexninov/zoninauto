@@ -1,9 +1,0 @@
-.link {
-  color: var(--white);
-  transition: var(--tr-out);
-}
-
-.link:hover {
-  color: var(--primary);
-  transition: var(--tr-in);
-}

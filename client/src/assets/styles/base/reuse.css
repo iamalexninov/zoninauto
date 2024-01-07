@@ -16,6 +16,16 @@
   width: 100%;
 }
 
+.href_link {
+  color: var(--white);
+  transition: var(--tr-out);
+}
+
+.href_link:hover {
+  color: var(--primary);
+  transition: var(--tr-in);
+}
+
 .btn {
   display: flex;
   justify-content: center;
