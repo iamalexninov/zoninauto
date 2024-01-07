@@ -1,26 +1,22 @@
+import { GlobalIcon } from "../../Global/Icon/GlobalIcon";
 import styles from "./NavbarMobile.module.css";
 
-import {
-  FaBars as MobileOpenBtn,
-  FaX as MobileCloseBtn,
-} from "react-icons/fa6";
-
 export const NavbarMobile = ({ mobileMenu, setMobileMenu }) => {
+  const handleClick = () => {
+    setMobileMenu(!mobileMenu);
+  };
+
   return (
     <>
       <div className={styles.buttons}>
         {mobileMenu ? (
-          <MobileCloseBtn
-            className={styles.icon}
-            size={25}
-            onClick={() => setMobileMenu(!mobileMenu)}
-          />
+          <div onClick={handleClick}>
+            <GlobalIcon name="mobileCloseMenu" />
+          </div>
         ) : (
-          <MobileOpenBtn
-            className={styles.icon}
-            size={25}
-            onClick={() => setMobileMenu(!mobileMenu)}
-          />
+          <div onClick={handleClick}>
+            <GlobalIcon name="mobileOpenMenu" />
+          </div>
         )}
       </div>
       {mobileMenu && (

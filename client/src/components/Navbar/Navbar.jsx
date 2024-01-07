@@ -28,7 +28,7 @@ const Navbar = () => {
         }
       >
         <NavbarLogo />
-        <NavbarList mobileMenu={mobileMenu} />
+        <NavbarList setMobileMenu={setMobileMenu}/>
         <NavbarAuth setMobileMenu={setMobileMenu}/>
       </nav>
       <NavbarMobile mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
