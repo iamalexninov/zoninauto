@@ -1,7 +1,7 @@
-import React from 'react'
-
-export const ButtonComponent = ({type,content,}) => {
+export const ButtonComponent = ({ type, content, handler }) => {
   return (
-    <div>Button</div>
-  )
-}
+    <button type={type} onClick={handler}>
+      {content}
+    </button>
+  );
+};
