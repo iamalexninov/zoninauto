@@ -1,7 +1,7 @@
 import { MdLogin, MdLogout } from "react-icons/md";
 import { FaUser, FaBars, FaX } from "react-icons/fa6";
 
-export const GlobalIcon = ({ name, size = 25, color = "black" }) => {
+export const GlobalIcon = ({ name, size = 25 }) => {
   const iconComponents = {
     login: MdLogin,
     logout: MdLogout,
@@ -17,5 +17,5 @@ export const GlobalIcon = ({ name, size = 25, color = "black" }) => {
     return "";
   }
 
-  return <IconComponent size={size} color={color} />;
+  return <IconComponent size={size} />;
 };

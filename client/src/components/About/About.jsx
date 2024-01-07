@@ -8,6 +8,7 @@ import { FaCheck } from "react-icons/fa6";
 
 const About = () => {
   return (
+    <>
     <section className={["section", styles.about].join(" ")}>
       <div className={["wrapper", styles.content].join(" ")}>
         <div className={styles.pictures_about}>
@@ -60,6 +61,7 @@ const About = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

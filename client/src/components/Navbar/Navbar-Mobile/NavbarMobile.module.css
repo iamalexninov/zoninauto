@@ -4,7 +4,14 @@
 }
 
 .icon {
-  padding: 10px;
+  color: var(--white);
+  background-color: var(--secondary);
+}
+
+.icon:hover {
+  color: var(--secondary);
+  background-color: var(--white);
+  border: 1px solid var(--secondary);
 }
 
 .overlay {

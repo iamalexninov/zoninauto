@@ -1,7 +1,9 @@
-const AboutUs = () => {
-  return (
-    <div>AboutUs</div>
-  )
-}
+import Hero from "../../components/Hero/Hero";
 
-export default AboutUs
+export const AboutUs = () => {
+  return (
+    <>
+      <Hero title="Some Title About Us" subtitle="About Us"/>
+    </>
+  )
+};

@@ -1,11 +1,11 @@
 import styles from "./NavbarAuth.module.css";
 
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import useLogout from "../../../hooks/useLogout";
 
 import { useAuthContext } from "../../../hooks/useAuthContext";
-import { LinkComponent } from "../../Global/Link/Link";
+import { GlobalLink } from "../../Global/Link/GlobalLink";
 import { GlobalIcon } from "../../Global/Icon/GlobalIcon";
 
 export const NavbarAuth = ({ setMobileMenu }) => {
@@ -26,24 +26,24 @@ export const NavbarAuth = ({ setMobileMenu }) => {
     <div className={styles.mobile}>
       {user ? (
         <div className={styles.logged}>
-          <LinkComponent to="/profile" handler={setMobileMenu(false)}>
-            <div>
+          <GlobalLink to="/profile" handler={setMobileMenu(false)}>
+            <div className={["global_icon", styles.icon].join(" ")}>
               <GlobalIcon name="user" />
             </div>
-          </LinkComponent>
-          <Link to="/logout" onClick={handleLogout}>
-            <div>
+          </GlobalLink>
+          <GlobalLink to="/logout" onClick={handleLogout}>
+            <div className={["global_icon", styles.icon].join(" ")}>
               <GlobalIcon name="logout" />
             </div>
-          </Link>
+          </GlobalLink>
         </div>
       ) : (
         <div className={styles.unlogged}>
-          <Link to="/signin" onClick={() => setMobileMenu(false)}>
-            <div>
+          <GlobalLink to="/signin" onClick={() => setMobileMenu(false)}>
+            <div className={["global_icon", styles.icon].join(" ")}>
               <GlobalIcon name="login" />
             </div>
-          </Link>
+          </GlobalLink>
         </div>
       )}
     </div>

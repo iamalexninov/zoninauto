@@ -10,11 +10,17 @@ export const NavbarMobile = ({ mobileMenu, setMobileMenu }) => {
     <>
       <div className={styles.buttons}>
         {mobileMenu ? (
-          <div onClick={handleClick}>
+          <div
+            onClick={handleClick}
+            className={["global_icon", styles.icon].join(" ")}
+          >
             <GlobalIcon name="mobileCloseMenu" />
           </div>
         ) : (
-          <div onClick={handleClick}>
+          <div
+            onClick={handleClick}
+            className={["global_icon", styles.icon].join(" ")}
+          >
             <GlobalIcon name="mobileOpenMenu" />
           </div>
         )}

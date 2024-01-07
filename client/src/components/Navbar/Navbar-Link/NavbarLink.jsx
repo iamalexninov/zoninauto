@@ -1,9 +1,9 @@
-import { LinkComponent } from "../../Global/Link/Link";
+import { GlobalLink } from "../../Global/Link/GlobalLink";
 
 export const NavbarLink = ({ content, link, setMobileMenu }) => {
   return (
     <li>
-      <LinkComponent
+      <GlobalLink
         to={link}
         content={content}
         handrel={setMobileMenu}
