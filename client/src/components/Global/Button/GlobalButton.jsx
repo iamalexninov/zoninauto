@@ -2,7 +2,6 @@ import { useHover } from "../../../hooks/useHover";
 import { useDynamicStyles } from "../../../hooks/useDynamicStyles";
 
 export const GlobalButton = ({ type, content, baseStyles, hoverStyles }) => {
-  
   const { isHovered, handleMouseEnter, handleMouseLeave } = useHover();
   const { dynamicStyles } = useDynamicStyles(
     baseStyles,

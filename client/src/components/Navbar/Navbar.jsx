@@ -1,37 +1,28 @@
 import styles from "./Navbar.module.css";
 
-import { useEffect, useState } from "react";
-
 import { NavbarLogo } from "./Navbar-Logo/NavbarLogo";
 import { NavbarList } from "./Navbar-List/NavbarList";
 import { NavbarAuth } from "./Navbar-Auth/NavbarAuth";
 import { NavbarMobile } from "./Navbar-Mobile/NavbarMobile";
+import { useMobileMenuContext } from "../../hooks/useMobileMenuContext";
 
 const Navbar = () => {
-  const [mobileMenu, setMobileMenu] = useState(false);
+  const mobile = useMobileMenuContext()
 
-  useEffect(() => {
-    window.onscroll = () => {
-      let currentScroolValue = window.scrollY;
-
-      if (currentScroolValue > 700) {
-        setMobileMenu(false);
-      }
-    };
-  }, []);
+  console.log(mobile)
 
   return (
     <header className={styles.header}>
       <nav
         className={
-          mobileMenu ? `${styles.navbar} ${styles.active}` : styles.navbar
+          mobile.mobileMenu ? `${styles.navbar} ${styles.active}` : `${styles.navbar}`
         }
       >
         <NavbarLogo />
-        <NavbarList setMobileMenu={setMobileMenu}/>
-        <NavbarAuth setMobileMenu={setMobileMenu}/>
+        <NavbarList />
+        <NavbarAuth />
       </nav>
-      <NavbarMobile mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
+      <NavbarMobile />
     </header>
   );
 };

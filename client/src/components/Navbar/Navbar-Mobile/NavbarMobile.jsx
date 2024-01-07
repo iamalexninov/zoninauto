@@ -1,36 +1,20 @@
-import { GlobalIcon } from "../../Global/Icon/GlobalIcon";
 import styles from "./NavbarMobile.module.css";
+import { GlobalIcon } from "../../Global/Icon/GlobalIcon";
+import { useMobileMenuContext } from "../../../hooks/useMobileMenuContext";
 
-export const NavbarMobile = ({ mobileMenu, setMobileMenu }) => {
-  const handleClick = () => {
-    setMobileMenu(!mobileMenu);
-  };
+export const NavbarMobile = () => {
+  const { mobileMenu } = useMobileMenuContext();
 
   return (
     <>
       <div className={styles.buttons}>
         {mobileMenu ? (
-          <div
-            onClick={handleClick}
-            className={["global_icon", styles.icon].join(" ")}
-          >
-            <GlobalIcon name="mobileCloseMenu" />
-          </div>
+          <GlobalIcon name="mobileCloseMenu" baseStyles="" hoverStyles="" />
         ) : (
-          <div
-            onClick={handleClick}
-            className={["global_icon", styles.icon].join(" ")}
-          >
-            <GlobalIcon name="mobileOpenMenu" />
-          </div>
+          <GlobalIcon name="mobileOpenMenu" baseStyles="" hoverStyles="" />
         )}
       </div>
-      {mobileMenu && (
-        <div
-          className={styles.overlay}
-          onClick={() => setMobileMenu(false)}
-        ></div>
-      )}
+      {mobileMenu && <div className={styles.overlay}></div>}
     </>
   );
 };

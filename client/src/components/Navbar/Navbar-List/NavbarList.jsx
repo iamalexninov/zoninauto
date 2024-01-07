@@ -2,7 +2,7 @@ import styles from "./NavbarList.module.css";
 import { NavbarLink } from "../Navbar-Link/NavbarLink";
 import { Links } from "./NavbarList.text";
 
-export const NavbarList = ({ setMobileMenu }) => {
+export const NavbarList = () => {
   return (
     <ul className={styles.list}>
       {Links.map((l) => (
@@ -10,7 +10,6 @@ export const NavbarList = ({ setMobileMenu }) => {
           key={Math.random()}
           content={l.content}
           link={l.link}
-          setMobileMenu={setMobileMenu}
         />
       ))}
     </ul>

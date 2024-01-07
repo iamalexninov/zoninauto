@@ -8,7 +8,7 @@ import { useAuthContext } from "../../../hooks/useAuthContext";
 import { GlobalLink } from "../../Global/Link/GlobalLink";
 import { GlobalIcon } from "../../Global/Icon/GlobalIcon";
 
-export const NavbarAuth = ({ setMobileMenu }) => {
+export const NavbarAuth = () => {
   const { user } = useAuthContext();
 
   const { signout } = useLogout();
@@ -16,9 +16,7 @@ export const NavbarAuth = ({ setMobileMenu }) => {
 
   const handleLogout = async (e) => {
     e.preventDefault();
-
     await signout();
-    setMobileMenu(false);
     navigate("/");
   };
 
@@ -37,7 +35,7 @@ export const NavbarAuth = ({ setMobileMenu }) => {
     <div className={styles.mobile}>
       {user ? (
         <div className={styles.logged}>
-          <GlobalLink to="/profile" handler={() => setMobileMenu(false)}>
+          <GlobalLink to="/profile">
             <GlobalIcon
               name="user"
               baseStyles={baseStyles}
@@ -54,7 +52,7 @@ export const NavbarAuth = ({ setMobileMenu }) => {
         </div>
       ) : (
         <div className={styles.unlogged}>
-          <GlobalLink to="/signin" handler={() => setMobileMenu(false)}>
+          <GlobalLink to="/signin">
             <GlobalIcon
               name="login"
               baseStyles={baseStyles}
