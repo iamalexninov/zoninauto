@@ -1,5 +1,5 @@
 import { MdLogin, MdLogout } from "react-icons/md";
-import { FaUser, FaBars, FaX } from "react-icons/fa6";
+import { FaUser, FaBars, FaX, FaCheck } from "react-icons/fa6";
 
 import { useHover } from "../../../hooks/useHover";
 import { useDynamicStyles } from "../../../hooks/useDynamicStyles";
@@ -20,6 +20,7 @@ export const GlobalIcon = ({ name, size = 25, baseStyles, hoverStyles }) => {
     user: FaUser,
     mobileOpenMenu: FaBars,
     mobileCloseMenu: FaX,
+    check: FaCheck,
   };
 
   const IconComponent = iconComponents[name] || null;

@@ -48,33 +48,8 @@
   margin-bottom: 10px;
 }
 
-.about_icon {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  border-radius: 50px;
-  background-color: var(--primary);
-  color: var(--white);
-  transition: var(--tr-out);
-}
-
 .about_item p {
   color: var(--light-gray);
-}
-
-.about_btn {
-  width: 220px;
-  height: 60px;
-  color: var(--white);
-  background-color: var(--primary);
-  transition: var(--tr-out);
-}
-
-.about_btn:hover, .about_icon:hover {
-  color: var(--primary);
-  border: 1px solid var(--primary);
-  background-color: var(--white);
-  transition: var(--tr-in);
 }
 
 @media only screen and (min-width: 767px) {

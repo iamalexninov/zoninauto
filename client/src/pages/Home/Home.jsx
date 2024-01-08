@@ -1,6 +1,6 @@
 import HomeHero from "./Hero/HomeHero";
 import Service from "../../components/Service/Service";
-import About from "../../components/About/About";
+import AboutPreview from "../../components/AboutPreview/AboutPreview";
 import YoutubeReviews from "../../components/YoutubeReviews/YoutubeReviews";
 import Companies from "../../components/Companies/Companies";
 
@@ -9,7 +9,7 @@ const Home = () => {
     <>
       <HomeHero />
       <Service />
-      <About />
+      <AboutPreview />
       <YoutubeReviews />
       <Companies />
     </>
